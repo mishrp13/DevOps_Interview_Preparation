@@ -915,15 +915,15 @@ ls -l
 
 You'll see something like:
 
-symlink.txt -> original.txt
-Hard vs Soft Link
-Feature	Hard Link	Soft Link
-Points to	Same inode	Pathname
-Different filesystem	Generally no	Yes
-Directory	Generally not allowed	Yes
-If original deleted	Data still accessible through hard link	Link becomes broken
-ls -li inode	Same	Different
-Can link directories	Generally no	Yes
+| Feature              | Hard Link                               | Soft Link           |
+| -------------------- | --------------------------------------- | ------------------- |
+| Points to            | Same inode                              | Pathname            |
+| Different filesystem | Generally no                            | Yes                 |
+| Directory            | Generally not allowed                   | Yes                 |
+| If original deleted  | Data still accessible through hard link | Link becomes broken |
+| `ls -li` inode       | Same                                    | Different           |
+| Can link directories | Generally no                            | Yes                 |
+
 Important interview example
 
 Suppose:
@@ -996,28 +996,30 @@ current → release-103
 This pattern is commonly associated with atomic-ish release switching, although the exact deployment safety depends on how the application and filesystem are managed.
 
 🔥 DevOps Interview Cheat Sheet
-Topic	Remember
-Partition	Logical division of disk
-Swap	Disk used as virtual memory
-Boot	BIOS/UEFI → GRUB → Kernel → systemd → services
-Permissions	r=4, w=2, x=1
-chmod	Change permissions
-chown	Change ownership
-LVM	PV → VG → LV → filesystem
-Zombie	Finished child not reaped by parent
-top	Real-time process/resource monitoring
-ps	Process information
-grep	Search text
-awk	Field/column processing
-sed	Stream editing/replacement
-tail -f	Follow live logs
-head	First lines
-df -h	Filesystem disk usage
-du -sh	Directory/file disk usage
-free -h	Memory/swap usage
-kill	Send signal to process
-Hard link	Same inode
-Soft link	Points to pathname
+| Topic       | Remember                                       |
+| ----------- | ---------------------------------------------- |
+| Partition   | Logical division of disk                       |
+| Swap        | Disk used as virtual memory                    |
+| Boot        | BIOS/UEFI → GRUB → Kernel → systemd → services |
+| Permissions | `r=4`, `w=2`, `x=1`                            |
+| `chmod`     | Change permissions                             |
+| `chown`     | Change ownership                               |
+| LVM         | PV → VG → LV → filesystem                      |
+| Zombie      | Finished child not reaped by parent            |
+| `top`       | Real-time process/resource monitoring          |
+| `ps`        | Process information                            |
+| `grep`      | Search text                                    |
+| `awk`       | Field/column processing                        |
+| `sed`       | Stream editing/replacement                     |
+| `tail -f`   | Follow live logs                               |
+| `head`      | First lines                                    |
+| `df -h`     | Filesystem disk usage                          |
+| `du -sh`    | Directory/file disk usage                      |
+| `free -h`   | Memory/swap usage                              |
+| `kill`      | Send signal to process                         |
+| Hard link   | Same inode                                     |
+| Soft link   | Points to pathname                             |
+
 ⭐ 10 Questions You Should Be Ready For
 
 For a DevOps interview, I would especially prepare these:
