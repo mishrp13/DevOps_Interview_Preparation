@@ -26,6 +26,7 @@ def has_tag(instance, tag_key):
     return any(
         tag["Key"] == tag_key
         for tag in instance.get("Tags", [])
+        
     )
 
 
