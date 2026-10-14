@@ -1,4 +1,6 @@
 ```
+6.Check the health of a list of URLs concurrently (threads or asyncio)
+
 Interview answer: I use Python's concurrent.futures.ThreadPoolExecutor to check multiple URLs concurrently. Each thread sends an HTTP request, checks the response status code, and reports whether the URL is healthy or unhealthy.
 In DevOps, this is useful for monitoring application endpoints, microservices, websites, and health-check endpoints after deployment.
 Python code — URL health check using threads
