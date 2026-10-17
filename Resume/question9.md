@@ -33,7 +33,7 @@ Initially, I monitored the controller pods using Prometheus and Grafana and revi
 
 As part of the POC, I reviewed the CPU and memory requests and limits, evaluated the number of controller replicas, and tested a more suitable resource configuration under comparable traffic conditions. I monitored CPU usage, memory consumption, pod restarts, request latency, and HTTP errors before and after the changes.
 
-In the example measurement, aggregate controller CPU usage decreased from 500 millicores to 400 millicores, which represents a 20% reduction. I also checked that the controller remained healthy and that application latency and error rates did not deteriorate.
+For that matter, aggregate controller CPU usage decreased from 500 millicores to 400 millicores, which represents a 20% reduction. I also checked that the controller remained healthy and that application latency and error rates did not deteriorate.
 
 The POC demonstrated that the controller configuration could be made more resource-efficient without compromising application performance. The key lesson was to make tuning decisions based on observed metrics rather than simply reducing resource limits or replicas.
 
