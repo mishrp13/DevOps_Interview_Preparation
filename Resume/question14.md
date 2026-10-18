@@ -9,7 +9,7 @@ I'll explain it in the same order an interviewer would expect: business requirem
 
 -----------------------------------------------------------------------------------------------------
 1. Interview answer: Explain your project (2–3 minutes)
-In my company, we had a requirement to identify running EC2 instances that were missing the mandatory Environment tag.
+we had a requirement to identify running EC2 instances that were missing the mandatory Environment tag.
 Manually checking EC2 instances was time-consuming, so I developed a Python automation script using the Boto3 SDK.
 First, I created an EC2 client using Boto3 and used the describe_instances API with a filter to retrieve only running instances.
 I implemented pagination because AWS can return instance information across multiple pages.
