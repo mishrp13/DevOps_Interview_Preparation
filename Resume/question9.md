@@ -37,4 +37,30 @@ For that matter, aggregate controller CPU usage decreased from 500 millicores to
 
 The POC demonstrated that the controller configuration could be made more resource-efficient without compromising application performance. The key lesson was to make tuning decisions based on observed metrics rather than simply reducing resource limits or replicas.
 
+
+
+******************************************************
+
+Simple English
+
+I worked on a POC to **reduce CPU and memory resource usage of the NGINX Ingress Controller** in our AWS EKS cluster.
+
+The main goal was to save resources without affecting application performance.
+
+First, I used **Prometheus and Grafana** to monitor how much CPU and memory the Ingress Controller pods were using.
+
+I noticed that the resource configuration could be optimized based on the actual traffic.
+
+Then I reviewed the **CPU and memory requests and limits**, along with the number of Ingress Controller replicas.
+
+I tested an optimized configuration and monitored the application to make sure everything was working properly.
+
+I checked CPU usage, memory usage, pod restarts, response time, and HTTP errors.
+
+**After the optimization, the total CPU usage decreased from 500 millicores to 400 millicores, which was a 20% reduction.**
+
+At the same time, application response time and error rates remained stable.
+
+So, the POC was successful because we reduced resource usage without affecting application performance.
+
 *****************************************************************************************

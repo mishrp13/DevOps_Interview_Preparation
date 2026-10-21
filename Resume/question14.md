@@ -14,7 +14,7 @@ Manually checking EC2 instances was time-consuming, so I developed a Python auto
 First, I created an EC2 client using Boto3 and used the describe_instances API with a filter to retrieve only running instances.
 I implemented pagination because AWS can return instance information across multiple pages.
 Then I iterated through each EC2 instance and checked whether the Environment tag existed. If the tag was missing, I added that instance ID to a list.
-I also implemented a dry-run flag to prevent accidental shutdowns during testing.
+I also implemented a dry-run flag to prevent shutdowns during testing.
 After developing and testing the script, I deployed it as an AWS Lambda function. I configured the Lambda execution role with the required IAM permissions and used Amazon EventBridge to trigger the function once every month.
 I monitored execution results and errors using Amazon CloudWatch Logs.
 This automation helped us reduce manual EC2 resource checks and improve tagging compliance. The script also supported stopping non-compliant instances when dry-run mode was disabled.
