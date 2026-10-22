@@ -10,19 +10,22 @@ urls = [
 ]
 
 def check_url(url):
+
     try:
-        response = requests.get(url, timeout=5)
 
-        if 200 <= response.status_code < 400:
-            return f"HEALTHY: {url} - {response.status_code}"
+        response= requests.get(url,timeout=5)
+
+        if 200 <= response.status_code <400:
+            return f"Healthy: {url}- {response.status_code}"
+
         else:
-            return f"UNHEALTHY: {url} - {response.status_code}"
+            return f"Unhealthy: {url}- {response.status_code}"
 
-    except requests.RequestException as error:
-        return f"UNHEALTHY: {url} - {error}"
+    except requests.exceptions as error:
+        return f"unhealthy: {url}- {error}"
 
 with ThreadPoolExecutor(max_workers=10) as executor:
-    results = executor.map(check_url, urls)
+    results= executor.map(check_url,urls)
 
 for result in results:
     print(result)

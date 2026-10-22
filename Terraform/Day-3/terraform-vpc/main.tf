@@ -16,6 +16,7 @@ resource "aws_vpc" "this" {
   enable_dns_support   = true
   enable_dns_hostnames = true
 
+
   tags = {
     Name = "drill3-vpc"
   }
@@ -92,3 +93,6 @@ resource "aws_route_table_association" "public" {
   subnet_id      = each.value.id
   route_table_id = aws_route_table.public.id
 }
+
+
+# traffic -> from subnet -> rout table asscoiation -> route table -> internet gateaway
