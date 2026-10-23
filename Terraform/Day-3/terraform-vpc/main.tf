@@ -95,4 +95,5 @@ resource "aws_route_table_association" "public" {
 }
 
 
-# traffic -> from subnet -> rout table asscoiation -> route table -> internet gateaway
+# traffic -> from subnet -> route table asscoiation -> route table -> internet gateaway
+
