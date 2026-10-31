@@ -6,14 +6,19 @@ def get_file_hash(file_path):
     sha256 = hashlib.sha256()
 
     with open(file_path, "rb") as file:
-        for chunk in iter(lambda: file.read(4096), b""):
+        while True:
+            chunk = file.read(4096)
+
+            if not chunk:
+                break
+
             sha256.update(chunk)
 
     return sha256.hexdigest()
 
 
 def find_duplicates(directory):
-    hashes = {}
+    hashes = {} 
 
     for root, dirs, files in os.walk(directory):
         for filename in files:
