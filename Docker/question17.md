@@ -99,7 +99,13 @@ docker run -d -p 8081:80 nginx
 Both containers use port 80 internally, but the host uses ports 8080 and 8081.
 Q4. What happens if the application listens on 127.0.0.1 inside the container?
 Port publishing may not work as expected. The application should generally listen on 0.0.0.0 inside the container so that traffic forwarded to the container can reach it.
-Interview-ready answer
-“EXPOSE is a Dockerfile instruction that documents the port the application listens on inside the container. It does not publish the port to the host. The -p option is used at runtime to map a host port to a container port, making the application reachable through the published host port. For example, EXPOSE 80 documents port 80, while docker run -p 8080:80 nginx maps host port 8080 to container port 80.”
+Interview Answer: Difference between EXPOSE and -p in Docker
+"EXPOSE is used in a Dockerfile to tell which port the application uses inside the container. It does not make the port accessible from outside.
 
-Easy way to remember: EXPOSE = declare the port; -p = publish the port.
+To access the container from outside, we use -p while running the container.
+
+For example, docker run -p 8080:80 nginx means host port 8080 is connected to container port 80."
+
+Easy way to remember:
+- EXPOSE = Declares the port.
+- -p = Publishes the port.

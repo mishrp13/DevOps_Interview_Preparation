@@ -178,16 +178,22 @@ docker logs backend
 Then verify DNS resolution, connectivity, application listening ports, network membership, and firewall rules.
 
 6. Interview answer to memorize
-Writing
 
-Docker supports different network modes, including bridge, host, and none.
+Docker Network Modes – Interview Answer
+Docker has 3 main network modes: Bridge, Host, and None.
 
-In bridge mode, containers connect through a Docker-managed virtual network. I prefer a user-defined bridge network because containers can communicate using their names through Docker's built-in DNS.
+1. Bridge mode: Containers can communicate with each other through a virtual network. It is commonly used when multiple containers need to connect.
 
-In host mode, the container shares the host's network namespace, so port publishing is not required, but network isolation is reduced.
+2. Host mode: The container uses the host machine's network directly. It does not need port mapping, but network isolation is reduced.
 
-In none mode, the container has no normal network connectivity and is useful for isolated workloads.
+3. None mode: The container has no normal network connection. It is used when we want to keep a container isolated.
 
-For container-to-container communication, I place related containers on the same user-defined bridge network and use their container names and listening ports. For example, a backend can connect to a database using db:3306. I use port publishing with -p when external clients need to access a container through the host.
+Example: If I have a backend and a database container, I connect them using a user-defined bridge network. The backend can access the database using db:3306.
 
-Quick revision: Bridge = shared virtual network; Host = shares host networking; None = no normal network. For application containers, a user-defined bridge is a common starting point.
+If I want outside users to access my container, I use -p to publish its port.
+
+Quick revision:
+- Bridge = Containers communicate.
+- Host = Uses host network.
+- None = No network.
+This is enough for a basic Docker networking interview question.

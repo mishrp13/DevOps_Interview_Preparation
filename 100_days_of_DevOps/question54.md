@@ -44,3 +44,9 @@ Then I executed a command inside the second container and checked `/tmp/games`. 
 This confirmed that both containers were successfully sharing data through the same EmptyDir volume.
 
 Through this task, I demonstrated how Kubernetes supports data sharing between multiple containers within a single Pod using shared volumes.
+
+final: 
+
+kubectl exec volume-share-devops -c volume-container-devops-1 -- sh -c 'echo "Welcome to xFusionCorp Industries" > /tmp/beta/beta.txt'
+
+kubectl exec volume-share-devops -c volume-container-devops-2 -- cat /tmp/games/beta.txt
