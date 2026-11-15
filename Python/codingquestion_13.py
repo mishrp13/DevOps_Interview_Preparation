@@ -3,7 +3,7 @@ import boto3
 import shutil
 from datetime import datetime
 
-# Configuration
+# Configuration"Local Zip
 SOURCE_DIR = "/var/log/myapp"
 BUCKET_NAME = "my-devops-backups"
 
